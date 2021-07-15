@@ -18,13 +18,14 @@ The function should:
 function createMenuItem(name, price, category){
 
   let newItem ={
-    name : "name",
-    price : "price",
-    category : "category",
+    "name" : name,
+    "price": price,
+    "category": category,
   }
   return newItem;
 }
 console.log(createMenuItem("pizza", 8 , "dinner"));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -35,11 +36,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
-createMenuItem("apples", 1 , "fruit");
-createMenuItem("cereal", 3 , "breakfast");
-createMenuItem("oranges", 1 , "fruit");
-
+console.log(createMenuItem("Mac n Cheese", 5, "sidedish"));
+console.log(createMenuItem("apple", 1 , "fruit"));
+console.log(createMenuItem("orange", 1 , "fruit"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -58,8 +57,20 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(customer){
+    if(customer === "teacher" || customer === "student"){
+      this.price = 13.5;
+      return this.price;
+    }else if (customer === "public"){
+      this.price = 16.2
+      return this.price;
+    }else{
+      console.log("Alien?");
+    }
+
+  }
 }
+burger.discount("teacher");
 
 
 
